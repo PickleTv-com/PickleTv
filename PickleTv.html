@@ -148,7 +148,6 @@
       gap: 6px;
       flex-wrap: wrap;
     }
-
     .btn {
       padding: 6px 14px;
       border: 1px solid #f5428d;
@@ -159,6 +158,7 @@
       font-size: 12px;
       font-weight: bold;
       transition: 0.3s ease;
+      text-decoration: underline; /* 👈 Added underline here */
     }
 
     .btn:hover, .btn.liked {
@@ -382,7 +382,7 @@
         downloadBtn.className = "btn";
         downloadBtn.textContent = "Download";
         downloadBtn.setAttribute("aria-label", "Download this video");
-        const adUrl = video.adUrl && video.adUrl.startsWith("http") ? video.adUrl : "https://example.com/ad.mp4";
+        const adUrl = video.adUrl && video.adUrl.startsWith("http") ? video.adUrl : "";
         downloadBtn.onclick = () => playAdThenDownload(adUrl, video.url);
 
         btnGroup.appendChild(likeBtn);
